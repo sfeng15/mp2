@@ -1,1 +1,27 @@
 // Insert your mixins
+@mixin height($h) {
+  -webkit-height: $h;
+  -moz-height: $h;
+  -ms-height: $h;
+  height: $h;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin transition($tran) {
+  -webkit-transition: opacity $tran ease-in;
+  -moz-transition: opacity $tran ease-in;
+  transition: opacity $tran ease-in;
+}
+@mixin background($co) {
+  background: #fff;
+  background: -moz-linear-gradient($co, #999);
+  background: -webkit-linear-gradient($co, #999);
+  background: -o-linear-gradient($co, #999);
+}
+
+//.small { @include height(600px); }
+//.big { @include height(1500px); }

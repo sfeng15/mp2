@@ -1,1 +1,348 @@
-// Add any custom Sass & CSS here
+@import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
+@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+
+
+// top-bar
+.top-bar {
+  width: 100%;
+  z-index: 10;
+  transition: height .25s ease;
+  height: 4.5em;
+  padding-right: 0;
+
+  .top-bar-right, .top-bar-left {
+    transition: padding-top .25s ease;
+    padding-top: 1.4em;
+  }
+  &.shrink {
+    height: 3em;
+    .top-bar-right, .top-bar-left {
+      padding-top: 0em;
+    }
+  }
+}
+.element {
+  // Only affects medium screens and smaller
+  @include breakpoint(medium up) {
+    display:none }
+
+}
+
+
+//body
+//
+//
+#sectionA{
+  height:900px;
+  width: 100%;
+  margin:0 auto;
+  background-color: rgba(33, 255, 28, 0.14);
+  text-align: center;
+
+  background:url("../pics/China.jpg");
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  position: relative;
+
+  #original{
+    //left:50%;
+    //position: relative;
+    //transform: translateX(-50px);
+    margin:0 auto;
+    display: block;
+    height:100px;
+    width: 100px;
+
+  }
+  p{
+    margin:0 auto;
+    height:100px;
+    padding: 100px;
+    font-size: 70px;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-style: italic;
+    line-height: 120%;
+    color:white;
+  }
+  .button {
+    background-color: #008CBA;
+    color: white;
+    border-radius: 12px;
+
+    margin:0 auto;
+    text-align: center;
+    top:50%;
+    margin-top:100px ;
+    a{
+      color: white;
+    }
+  }
+}
+
+
+
+
+#sectionB{
+  margin:auto;
+  height:900px;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.1);
+  img{
+    width: 100%;
+    height: 300px;
+  }
+  video{
+    width: 100%;
+    height: 300px;
+  }
+
+
+}
+#sectionC{
+  margin:0 auto;
+  text-align: center;
+  width: 100%;
+  height:600px;
+  background-color: rgba(14, 255, 248, 0.12);
+}
+.section_width{
+  margin:auto;text-align: center;padding: 50px
+}
+#d{
+  width: 100%;
+  height:1500px;
+  /*.big { @include height(1500px); }*/
+}
+
+h1 {
+  width: 300px;
+  padding: 35px;
+  border: 10px;
+  margin: auto;
+  text-align: center;
+  color: $color;
+}
+body {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background :url("../pics/background2.jpg");
+
+  width: auto;
+}
+
+section {
+  width:100%;
+}
+
+footer {
+  background-color: #a69fa8;
+  color:white;
+  clear:both;
+  height: 30px;
+  width: 100%;
+}
+#face{
+  position: relative;
+  transform: translateX(-50px);
+  left:50%;
+}
+//modal
+//
+//
+.modalDialog {
+  display: block;
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity:0;
+  #new{
+    height: 300px;width: 300px
+  }
+  @include transition(50px);
+  pointer-events: none;
+}
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+.modalDialog > div {
+  width: 400px;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -moz-linear-gradient(#fff, #999);
+  background: -webkit-linear-gradient(#fff, #999);
+  background: -o-linear-gradient(#fff, #999);
+}
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  /*-webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;*/
+  @include border-radius(12px);
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+.close:hover {
+  background: #00d9ff;
+}
+
+//flash
+//
+//
+@keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  margin-top: auto;
+  margin-left: auto;
+  width: 100%;
+  height: 100px;
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-iteration-count: 100;
+  p {
+    width: 50px;
+    margin: auto;
+    color: #0000ff;
+    font-size: large;
+    font-style: italic;
+    padding:100px;
+  }
+}
+
+//vertical centered
+//
+//
+
+#d {
+  height: 500px;
+  width: 100%;
+  display: table;
+  background-color: rgba(113, 113, 113, 0.1);
+
+}
+.outer {
+  height: 200px;
+  background-color: rgba(138, 138, 138, 0.17);
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+.inner {
+  height: 50%;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  transform: translateX(-50px);
+  left:50%;
+}
+
+
+
+//carousel
+//
+//
+#carousel {
+  width:255px;
+  height:290px;
+  margin:0 auto;
+}
+#slides {
+  overflow:hidden;
+  /* fix ie overflow issue */
+  position:relative;
+  width:250px;
+  height:250px;
+  border:1px solid #ccc;
+}
+/* remove the list styles, width : item width * total items */
+#slides ul {
+  position:relative;
+  left:0;
+  top:0;
+  list-style:none;
+  margin:0;
+  padding:0;
+  width:750px;
+}
+/* width of the item, in this case I put 250x250x gif */
+#slides li {
+  width:250px;
+  height:250px;
+  float:left;
+}
+#slides li img {
+  padding:5px;
+}
+/* Styling for prev and next buttons */
+#buttons {
+  padding:0 0 5px 0;
+  float:right;
+}
+#buttons a {
+  display:block;
+  width:31px;
+  height:32px;
+  text-indent:-999em;
+  float:left;
+  outline:0;
+}
+a#prev {
+  background: url("../pics/arrow.gif") 0 -31px no-repeat;
+}
+a#prev:hover {
+  background:url("../pics/arrow.gif") 0px 0px no-repeat;
+}
+a#next {
+  background:url("../pics/arrow.gif") -32px -31px no-repeat;
+}
+a#next:hover {
+  background:url("../pics/arrow.gif") -32px 0 no-repeat;
+}
+.clear {clear:both}
+
+
+
+//vertical centered
+//
+//
+.table-outer {
+  width: 100%;
+  display: table;
+}
+.outer {
+  height: 200px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.inner {
+  width: 100px;
+  height: 50%;
+}
+
