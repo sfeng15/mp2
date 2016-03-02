@@ -12,7 +12,12 @@ $('.top-bar').on('sticky.zf.stuckto:top', function(){
 console.log(Foundation.version);
 
 
-
+$(window).on('resize', function(event){
+    var windowWidth = $(window).width();
+    if(windowWidth <640){
+        $(".another").css("height", 0);
+    }
+});
 
 
 //link to the corresponding position
@@ -206,3 +211,4 @@ $(document).ready(function() {
 function rotate() {
     $('#next').click();
 }
+
