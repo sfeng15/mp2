@@ -245,7 +245,13 @@ footer {
   width: 100%;
   display: table;
   background-color: rgba(113, 113, 113, 0.1);
+  img {
+    // Only affects medium screens and smaller
+    @include breakpoint(medium down) {
+      display:none
+    }
 
+  }
 }
 .outer {
   height: 200px;
